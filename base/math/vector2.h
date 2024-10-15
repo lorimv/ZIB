@@ -2,6 +2,7 @@
 #define VECTOR2_H
 
 #include <cmath>
+#include "base/math/constants.h"
 
 struct Vector2 {
     float x, y;
@@ -55,7 +56,7 @@ struct Vector2 {
     static Vector2 quotient(const Vector2& v1, const Vector2& v2) {
         return Vector2(v1.x / v2.x, v1.y / v2.y);
     }
-    //scalar functions
+    //scalar functions (static)
     static Vector2 scalarProduct(const Vector2& v, float n) {
         return Vector2(v.x * n, v.y * n);
     }
@@ -67,9 +68,11 @@ struct Vector2 {
     static float dot(const Vector2& v1, const Vector2& v2);
     static float cross(const Vector2& v1, const Vector2& v2);
     static float length(const Vector2& v);
+
     void normalize();
     static Vector2 normalized(const Vector2& v);
     
+    // TODO is this necessary in c++?
     static Vector2 copy(const Vector2 v);
 };
 

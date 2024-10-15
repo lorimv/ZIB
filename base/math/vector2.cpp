@@ -15,11 +15,10 @@ float Vector2::length(const Vector2& v) {
 }
 
 void Vector2::normalize() {
-    //TODO fix the floating point rounding to zero issue, find a consistent solution
-    // s = the size of the vector squared
+    // s = the size of the vector, squared
     float s = x*x + y*y;
 
-    if (s != 0) {
+    if (std::fabs(s) > EPSILON) { // if it's not zero...
         // s now becomes the scale factor (inverted). gotta save that space
         s = std::sqrt(s);
         x /= s;
