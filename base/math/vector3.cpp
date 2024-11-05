@@ -1,6 +1,4 @@
 #include "vector3.h"
-//debug:
-//#include <iostream>
 
 float Vector3::dot(const Vector3& v1, const Vector3& v2) {
     return v1.x*v2.x + v1.y*v2.y + v1.z*v2.z;
@@ -48,14 +46,3 @@ Vector3 Vector3::normalized(const Vector3& v) {
     vNormal.normalize();
     return vNormal;
 }
-
-// int main() {
-//     Vector3 test = Vector3(1, 1);
-//     Vector3 hi;
-//     std::cout << test.x << std::endl;
-//     std::cout << hi.x << std::endl;
-//     Vector3::length(test);
-//     test.x = 2;
-//     std::cout << Vector3::normalized(test).x;
-//     return 0;
-// }

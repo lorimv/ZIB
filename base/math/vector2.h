@@ -75,6 +75,11 @@ struct Vector2 {
     void normalize();
     static Vector2 normalized(const Vector2& v);
     
+    // TODO invert() and inverse(v)
+    // distance between points
+    // rotate and transform?
+    //
+    // reason i'm not immediately adding these is I want to re-learn linear algebra as i add fns
 };
 
 #endif // VECTOR2_H
