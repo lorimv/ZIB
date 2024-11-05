@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "main/application.h"
+using namespace Zib;
 
 Application::Application(){
     // constructor

@@ -1,14 +1,21 @@
 #pragma once
 
-class Application {
-    public:
-        Application();
-        ~Application();
+namespace Zib {
 
-        void run();
+    class Application {
+        public:
+            Application();
+            ~Application();
 
-    private:
-        bool initialize();
-        void mainLoop();
-        void shutdown();
-};
+            void run();
+
+        private:
+            bool initialize();
+            void mainLoop();
+            void shutdown();
+    };
+
+    // defined in the game made by the user
+    Application* CreateApplication();
+
+}
