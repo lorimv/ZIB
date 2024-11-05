@@ -14,6 +14,15 @@ float Vector2::length(const Vector2& v) {
     return std::sqrt(v.x*v.x + v.y*v.y);
 }
 
+bool Vector2::isEqual(const Vector2& v1, const Vector2& v2) {
+    return (std::fabs(v1.x - v2.x) < EPSILON &&
+            std::fabs(v1.y - v2.y) < EPSILON);
+}
+bool Vector2::notEqual(const Vector2& v1, const Vector2& v2) {
+    return (std::fabs(v1.x - v2.x) > EPSILON ||
+            std::fabs(v1.y - v2.y) > EPSILON);
+}
+
 void Vector2::normalize() {
     // s = the size of the vector, squared
     float s = x*x + y*y;

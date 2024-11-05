@@ -69,11 +69,12 @@ struct Vector2 {
     static float cross(const Vector2& v1, const Vector2& v2);
     static float length(const Vector2& v);
 
+    static bool isEqual(const Vector2& v1, const Vector2& v2);
+    static bool notEqual(const Vector2& v1, const Vector2& v2);
+
     void normalize();
     static Vector2 normalized(const Vector2& v);
     
-    // TODO is this necessary in c++?
-    static Vector2 copy(const Vector2 v);
 };
 
 #endif // VECTOR2_H
