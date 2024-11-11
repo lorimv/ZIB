@@ -7,3 +7,5 @@
 10/16/24 : Added a basic Makefile. 'make' currently uses vector2.cpp & outputs 'runner' in the main folder; 'make clean' removes it (also removes .o files, but that currently is unused)
 
 11/04/24 : Hopping back on. Added vec3 class quick, currently learning more about the actual engine structure so soon ill be doing a lot more than a basic math library
+
+11/05/24 : By including zib.h (from the ZIB root dir) we import application.h, responsible for starting things up. we'll need to compile as a library, and find a way to make this .so or whatever accessible. But for now, I'm just gonna be using a .main during development until this causes issues
