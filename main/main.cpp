@@ -31,8 +31,9 @@
         // Linux code
     #endif
 
-    Application application;
-    application.run();
+    Zib::Application* application = Zib::createApplication();
+    application->run();
+    delete application;
     
     return 0;
 }

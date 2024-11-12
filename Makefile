@@ -1,22 +1,39 @@
 # Compiler
 CXX = g++
 
-# Don't think this is how you do a good makefile
-# i'll do more once I have a better idea of how my engine acc runs
-# will need to find out how to make it a library usable by ext apps
-ZIB_DIRECTORY = ./
+# Directories
+ZIB_DIR = ./
+OBJ_DIR = obj
 
-CXXFLAGS = -I$(ZIB_DIRECTORY) -shared -fPIC
-# CXXFLAGS = -I$(ZIB_DIRECTORY) -shared -fPIC
+# Flags
+CXXFLAGS = -I$(ZIB_DIR) -std=c++17 -Wall -Wextra
 
+# Source files
 SRCS = $(wildcard base/math/*.cpp) $(wildcard main/*.cpp)
-OBJS = $(SRCS:.cpp=.o)
 
-TARGET = runner
-# TARGET = libzib.so
+# Object files
+OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
-demo:
-	$(CXX) $(SRCS) $(CXXFLAGS) -o $(TARGET)
+# Target
+TARGET = libZIB.a
+
+# Phony targets
+.PHONY: all clean
+
+all: $(TARGET)
+
+# Rule to create object directory
+$(OBJ_DIR):
+	mkdir -p $@
+
+# Rule to compile .cpp to .o
+$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+	@mkdir -p $(@D)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Rule to create the library
+$(TARGET): $(OBJS)
+	ar rcs $@ $^
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -rf $(OBJ_DIR) $(TARGET)

@@ -16,6 +16,6 @@ namespace Zib {
     };
 
     // defined in the game made by the user
-    Application* CreateApplication();
+    extern Application* createApplication();
 
 }
