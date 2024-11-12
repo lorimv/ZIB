@@ -15,7 +15,7 @@ SRCS = $(wildcard base/math/*.cpp) $(wildcard main/*.cpp)
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 # Target
-TARGET = libZIB.a
+TARGET = libzib.a
 
 # Phony targets
 .PHONY: all clean
