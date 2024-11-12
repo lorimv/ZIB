@@ -10,4 +10,4 @@
 
 11/05/24 : By including zib.h (from the ZIB root dir) we import application.h, responsible for starting things up. we'll need to compile as a library, and find a way to make this .so or whatever accessible. But for now, I'm just gonna be using a .main during development until this causes issues
 
-11/12/24 : I gotta get main out of my main.cpp file expeditiously. I've successfully gotten the library working w an outside project (and made an actual Makefile) but it requires me to grab main.cpp from the ZIB directory. Incredibly stupid. Just make the client's main direct to the engine's entry function, probably
+11/12/24 : I gotta get main out of my main.cpp file expeditiously. I've successfully gotten the library working w an outside project (and made an actual Makefile) but it requires me to grab main.cpp from the ZIB directory. Incredibly stupid. Just make the client's main direct to the engine's entry function, probably. UPDATE I've added a 3rd party lib. Maybe add third party include dirs to the path during build process? Regardless, I'll need to figure out how to acc build (cmake?) because spdlog's imports do not work.

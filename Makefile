@@ -9,7 +9,7 @@ OBJ_DIR = obj
 CXXFLAGS = -I$(ZIB_DIR) -std=c++17 -Wall -Wextra
 
 # Source files
-SRCS = $(wildcard base/math/*.cpp) $(wildcard main/*.cpp)
+SRCS = $(wildcard base/*/*.cpp) $(wildcard main/*.cpp)
 
 # Object files
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
