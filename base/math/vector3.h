@@ -81,6 +81,8 @@ struct Vector3 {
     void normalize();
     static Vector3 normalized(const Vector3& v);
     
+    void invert();
+    static Vector3 inverse(const Vector3& v);
 };
 
 #endif // VECTOR3_H

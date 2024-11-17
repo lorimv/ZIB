@@ -14,6 +14,8 @@ struct Vector2 {
     // and a set of static methods for functional programming styles
     // INSTANCE METHODS ARE ONLY USED TO MODIFY THE ORIGINAL VECTOR
 
+    // INLINE FUNCTIONS (basic operations)
+
     // in-place functions
     // four basic operations
     void add(const Vector2& v) {
@@ -74,9 +76,11 @@ struct Vector2 {
 
     void normalize();
     static Vector2 normalized(const Vector2& v);
+
+    void invert();
+    static Vector2 inverse(const Vector2& v);
     
-    // TODO invert() and inverse(v)
-    // distance between points
+    // TODO: distance between points
     // rotate and transform?
     //
     // reason i'm not immediately adding these is I want to re-learn linear algebra as i add fns

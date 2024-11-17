@@ -6,7 +6,8 @@ ZIB_DIR = ./
 OBJ_DIR = obj
 
 # Flags
-CXXFLAGS = -I$(ZIB_DIR) -std=c++17 -Wall -Wextra
+# TODO add a better system for 3rd party includes (how do I get the flag before each one programatically?)
+CXXFLAGS = -I$(ZIB_DIR) -I./thirdparty/spdlog/include -std=c++17 -Wall -Wextra
 
 # Source files
 SRCS = $(wildcard base/*/*.cpp) $(wildcard main/*.cpp)

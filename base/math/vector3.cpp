@@ -28,6 +28,7 @@ bool Vector3::notEqual(const Vector3& v1, const Vector3& v2) {
             std::fabs(v1.z - v2.z) > EPSILON);
 }
 
+// Normal functions
 void Vector3::normalize() {
     // s = the size of the vector, squared
     float s = x*x + y*y + z*z;
@@ -40,9 +41,20 @@ void Vector3::normalize() {
         z /= s;
     }
 }
-
 Vector3 Vector3::normalized(const Vector3& v) {
     Vector3 vNormal = v;
     vNormal.normalize();
     return vNormal;
+}
+
+// Inverse functions
+void Vector3::invert() {
+    x = -x;
+    y = -y;
+    z = -z;
+}
+Vector3 Vector3::inverse(const Vector3& v) {
+    Vector3 vInverse = v;
+    vInverse.invert();
+    return vInverse;
 }

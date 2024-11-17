@@ -21,6 +21,7 @@ bool Vector2::notEqual(const Vector2& v1, const Vector2& v2) {
             std::fabs(v1.y - v2.y) > EPSILON);
 }
 
+// Normal functions
 void Vector2::normalize() {
     // s = the size of the vector, squared
     float s = x*x + y*y;
@@ -32,14 +33,19 @@ void Vector2::normalize() {
         y /= s;
     }
 }
-
-// and here is the non-side effect one. the idea is that instance functions always modify, and 
-// static ones never do. That way it's much harder to accidentally cause a side effect
 Vector2 Vector2::normalized(const Vector2& v) {
     Vector2 vNormal = v;
     vNormal.normalize();
     return vNormal;
 }
 
-// am still considering whether it is more or less confusing to use so many static functions for key math
-// in my arrogant opinion I think an instance function implies you're performing an operation on the thing
+// Inverse functions
+void Vector2::invert() {
+    x = -x;
+    y = -y;
+}
+Vector2 Vector2::inverse(const Vector2& v) {
+    Vector2 vInverse = v;
+    vInverse.invert();
+    return vInverse;
+}
